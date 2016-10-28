@@ -19,13 +19,13 @@ For Trello Board go to [this link](https://trello.com/b/qT39dMLx/wdi-project-2-i
 ![ERD](https://github.com/neonagx/Project-2-IDRA-Hub/blob/master/assets/ERD.png)
 
 ##Technologies Used
-Ruby
-Ruby on Rails
-JQuery
-HTML
-CSS
-Javascript
-Bootstrap
+1. Ruby
+2. Ruby on Rails
+3. JQuery
+4. HTML
+5. CSS
+6. Javascript
+7. Bootstrap
 
 ##MVP
 1. Have a fully functional CRUD application site for IDRA Hub Buy/Sell feature
