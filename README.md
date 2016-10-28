@@ -28,6 +28,6 @@ Javascript
 Bootstrap
 
 ##MVP
-Have a fully functional CRUD application site for IDRA Hub Buy/Sell feature
-Render Bootstrap Style for IDRA Hub
-User can create their own account and login
+1. Have a fully functional CRUD application site for IDRA Hub Buy/Sell feature
+2. Render Bootstrap Style for IDRA Hub
+3. User can create their own account and login
