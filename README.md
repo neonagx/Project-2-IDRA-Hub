@@ -10,6 +10,14 @@ IDRA is a full CRUD application site where Droners post any drone related produc
 
 For Trello Board go to [this link](https://trello.com/b/qT39dMLx/wdi-project-2-idra-hub)
 
+##Wireframes
+
+![Home page](https://github.com/neonagx/Project-2-IDRA-Hub/blob/master/assets/Wireframe1.png)
+![Main page](https://github.com/neonagx/Project-2-IDRA-Hub/blob/master/assets/Wireframe2.png)
+![Posted page](https://github.com/neonagx/Project-2-IDRA-Hub/blob/master/assets/Wireframe3.png)
+![Rank page](https://github.com/neonagx/Project-2-IDRA-Hub/blob/master/assets/Wireframe4.png)
+![ERD](https://github.com/neonagx/Project-2-IDRA-Hub/blob/master/assets/ERD.png)
+
 ##Technologies Used
 Ruby
 Ruby on Rails
@@ -20,6 +28,6 @@ Javascript
 Bootstrap
 
 ##MVP
-Have a fully functional CRUD application site for IDRA Hub
+Have a fully functional CRUD application site for IDRA Hub Buy/Sell feature
 Render Bootstrap Style for IDRA Hub
 User can create their own account and login
