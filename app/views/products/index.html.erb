@@ -1,2 +1,12 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<h1>IDRA Hub</h1>
+
+<ul>
+  <% @products.each do |product| %>
+  <li><%= product.name %></li>
+  <li><%= product.price %></li>
+  <li><%= product.description %></li>
+  <li><%= product.user %></li>
+  <li><%= product.created_at %></li>
+  <li><%= product.updated_at %></li>
+  <% end %>
+</ul>
