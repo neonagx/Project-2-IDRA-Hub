@@ -4,8 +4,7 @@
   <% @products.each do |product| %>
   <li>Product Name: <%= product.name %></li>
   <li>Price: $<%= product.price %></li>
-  <li>Description: <%= product.description %></li>
-  <li>Posted By: <%= product.user %></li>
+  <li>Posted By: <%= product.user.name %> </li>
   <li>Date Created: <%= product.created_at %></li>
   <li>Date Updated: <%= product.updated_at %></li>
   <% end %>

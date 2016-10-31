@@ -1,2 +1,23 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<h1><%= @product.name.capitalize %></h1>
+
+<div>
+  Price: $<%= @product.price %>
+</div>
+<div>
+  Buying or Selling?
+  <% if @product.for_sale %>
+    Buying
+  <% else %>
+    Selling
+  <% end %>
+</div>
+<div>
+  Posted By: <%= @product.user.name %>
+</div>
+<div>
+  Posted By: <%= @product.created_at%>
+</div>
+<div>
+  Posted By: <%= @product.updated_at %>
+</div>
+<p><%= @product.description %></p>

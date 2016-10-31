@@ -5,7 +5,7 @@
   </div>
   <div>
     <%= p.label :price %>
-    <%= p.number_field :price, :step => 0.00 %>
+    <%= p.number_field :price, :step => 0.001 %>
   </div>
   <div>
     <%= p.label :description %>
@@ -13,7 +13,7 @@
   </div>
   <div>
     <%= p.label :for_sale %>
-    <%= p.check_box :for_sale%>
+    <%= p.select :for_sale, options_for_select([["Select One", ""], "Selling", "Buying"])%>
   </div>
   <div>
     <%= p.submit %>
