@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update, :destroy]
-  def index
-    @users = User.all
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  def show
   end
 
   def new
@@ -12,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id.to_s
-      redirect_to users_path
+      redirect_to @user
     else
       render :new
     end
@@ -40,6 +39,7 @@ private
   end
 
   def set_user
-    @user = User.find(session[:user_id])
+    @user = User.find(params[:id])
   end
+
 end
