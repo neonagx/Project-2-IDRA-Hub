@@ -1,1 +1,29 @@
 <%= render 'header' %>
+
+<h1>Welcome <% if current_user.admin == true %>Admin <% else %> Droner <% end %> <%= current_user.name if current_user %></h1>
+
+  <div>
+    <%= link_to 'Edit Your Profile', edit_user_path(current_user) %>
+  </div>
+  <div>
+    <%= link_to 'Log Out', logout_path, method: :delete %>
+  </div>
+  <div>
+    <%= link_to 'Post A Product!', new_product_path %>
+  </div>
+
+    <ul>
+
+      <li>Your username is: <%= current_user.username %></li>
+      <li>Gender:
+        <% if current_user.gender %>
+          Male
+        <% else %>
+          Female
+        <% end %>
+      </li>
+      <li>Date of Birth: <%= current_user.date_of_birth %></li>
+      <li>Email: <%= current_user.email %></li>
+      <li>Phone Number: <%= current_user.phone %></li>
+
+    </ul>

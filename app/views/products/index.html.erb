@@ -4,8 +4,14 @@
   <% @products.each do |product| %>
   <li>Product Name: <%= product.name %></li>
   <li>Price: $<%= product.price %></li>
-  <li>Posted By: <%= product.user.name %> </li>
+  <li>
+    <% if product.user == current_user %>
+      This is Your Product
+    <% else %>
+      Posted by: <%= product.user.name %> <%= link_to "Go to Poster's Profile", user_path(product.user) %>
+    <% end %>
+  </li>
   <li>Date Created: <%= product.created_at %></li>
-  <li>Date Updated: <%= product.updated_at %></li>
+  <li>Date Updated: <%= product.updated_at %></li><br>
   <% end %>
 </ul>
