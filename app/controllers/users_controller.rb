@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:edit, :update, :destroy]
   def index
     @users = User.all
   end
@@ -17,8 +18,28 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    if @user.update_attributes(user_params)
+      redirect_to @user
+    else
+      render :edit
+    end
+  end
+
+  def edit
+  end
+
+  def destroy
+    @user.destroy
+    redirect_to users_path
+  end
+
 private
   def user_params
     params.require(:user).permit(:name, :username, :password, :password_confirmation, :date_of_birth, :gender, :phone, :email)
+  end
+
+  def set_user
+    @user = User.find(session[:user_id])
   end
 end
