@@ -27,11 +27,7 @@
   </div>
   <div>
     <%= f.label :gender %>
-    <%= f.check_box :gender %>
-  </div>
-  <div>
-    <%= f.label :admin %>
-    <%= f.check_box :admin %>
+    <%= f.select :gender, options_for_select([["Select One", ""], "Male", "Female"]) %>
   </div>
   <div>
     <%= f.label :date_of_birth %>

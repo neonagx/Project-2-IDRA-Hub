@@ -1,0 +1,21 @@
+<%= form_for @product do |p| %>
+  <div>
+    <%= p.label :name %>
+    <%= p.text_field :name %>
+  </div>
+  <div>
+    <%= p.label :price %>
+    <%= p.number_field :price, :step => 0.00 %>
+  </div>
+  <div>
+    <%= p.label :description %>
+    <%= p.text_field :description %>
+  </div>
+  <div>
+    <%= p.label :for_sale %>
+    <%= p.check_box :for_sale%>
+  </div>
+  <div>
+    <%= p.submit %>
+  </div>
+<% end %>

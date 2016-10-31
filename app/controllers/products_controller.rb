@@ -20,13 +20,21 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to @product
     else
-      render :edit
+      render :new
     end
   end
 
   def destroy
     @product.destroy
     redirect_to products_path
+  end
+
+  def update
+    if @product.update_attributes(product_params)
+      redirect_to @product
+    else
+      render :edit
+    end
   end
 
 private
