@@ -1,8 +1,13 @@
 <%= render 'header' %>
 
+<h1>Welcome <%= current_user.name if current_user %></h1>
+
 <ul>
   <% @users.each do |user| %>
-    <li><%= user.name %></li>
+    <li>Your name is: <%= user.name %></li>
+    <li>Your gender is: <%= user.gender%></li>
+    <li>Your Birthday is: <%= user.date_of_birth %></li>
+    <li>Your email: <%= user.email %></li>
   <% end %>
 </ul>
 
