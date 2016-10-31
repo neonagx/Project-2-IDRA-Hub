@@ -4,8 +4,7 @@
   Welcome to IDRA Hub!  A place where Droners can post to either sell or buy any drones as well as any drone parts.  It is also a place where IDRA posts it's own ranking system.
   </p>
 
-  <div>Login</div>
-  <div>Sign Up as a New Droner</div>
+
 
   <%= form_for :login do |f| %>
     <div>
@@ -20,3 +19,6 @@
       <%= f.submit 'Login' %>
     </div>
   <% end %>
+    <div>
+      <%= link_to 'Sign Up', new_user_path %>
+    </div>

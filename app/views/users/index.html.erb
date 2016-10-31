@@ -1,7 +1,9 @@
-<h1>IDRA Hub</h1>
+<%= render 'header' %>
 
 <ul>
   <% @users.each do |user| %>
     <li><%= user.name %></li>
   <% end %>
 </ul>
+
+<%= link_to 'Log Out', logout_path, method: :delete %>
