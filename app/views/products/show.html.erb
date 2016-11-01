@@ -24,13 +24,13 @@
 
 <%= form_for([@product, @comment]) do |c| %>
   <div>
-    <%= c.label :message %>
+    <%= c.label :message %><br>
     <%= c.text_field :content %>
   </div>
-    <%= c.submit %>
+    <%= c.submit 'Submit Comment'%>
 <% end %>
 
 <% @product.comments.each do |comment| %>
-<%= comment.content %>
-<%= comment.user.username %>
+  <%= comment.content %>
+  <%= comment.user.username %>
 <% end %>
