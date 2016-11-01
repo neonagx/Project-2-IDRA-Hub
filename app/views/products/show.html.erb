@@ -1,5 +1,7 @@
 <h1><%= @product.name.capitalize %></h1>
-
+<div>
+  <%= image_tag @product.image.url(:large) %>
+</div>
 <div>
   Price: $<%= @product.price %>
 </div>

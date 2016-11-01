@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    redirect_to products_path unless current_user == @product.user
+    redirect_to products_path unless current_user == @product.user || current_user.admin
   end
 
   def create
@@ -37,7 +37,7 @@ class ProductsController < ApplicationController
   end
 
   def update
-    if current_user == @product.user
+    if current_user == @product.user || current_user.admin
       if @product.update_attributes(product_params)
         redirect_to @product
       else
@@ -48,7 +48,7 @@ class ProductsController < ApplicationController
 
 private
   def product_params
-    params.require(:product).permit(:name, :price, :description, :for_sale)
+    params.require(:product).permit(:name, :price, :description, :for_sale, :image)
   end
 
   def set_product

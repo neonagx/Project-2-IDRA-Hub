@@ -16,6 +16,10 @@
     <%= p.select :for_sale, options_for_select([["Select One", ""], "Selling", "Buying"])%>
   </div>
   <div>
+    <%= p.label :image %>
+    <%= p.file_field :image %>
+  </div>
+  <div>
     <%= p.submit %>
   </div>
 <% end %>
