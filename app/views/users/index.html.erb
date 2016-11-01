@@ -1,6 +1,13 @@
 <%= render 'header' %>
 
-<h1>Welcome <% if current_user.admin == true %>Admin <% else %> Droner <% end %> <%= current_user.name if current_user %></h1>
+<h1>Welcome
+  <% if current_user.admin == true %>
+    Admin
+  <% else %>
+    Droner
+  <% end %>
+    <%= current_user.name if current_user %>
+</h1>
 
   <div>
     <%= link_to 'Edit Your Profile', edit_user_path(current_user) %>

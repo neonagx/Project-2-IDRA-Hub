@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'sessions#new'
+
 
   get 'products/' => 'products#index'
   get 'products/new' => 'products#new', as: :new_product
@@ -15,7 +17,7 @@ Rails.application.routes.draw do
   get 'users/:id/edit' => 'users#edit', as: :edit_user
   patch 'users/:id' => 'users#update'
   delete 'users/:id' => 'users#destroy'
-
+  
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
