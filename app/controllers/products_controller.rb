@@ -37,10 +37,12 @@ class ProductsController < ApplicationController
   end
 
   def update
-    if @product.update_attributes(product_params)
-      redirect_to @product
-    else
-      render :edit
+    if current_user == @product.user
+      if @product.update_attributes(product_params)
+        redirect_to @product
+      else
+        render :edit
+      end
     end
   end
 
