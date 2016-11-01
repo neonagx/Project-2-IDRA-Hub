@@ -26,16 +26,21 @@ class UsersController < ApplicationController
   end
 
   def edit
+    redirect_to users_path unless current_user == @user || current_user.admin
   end
 
   def destroy
-    @user.destroy
-    redirect_to users_path
+    if current_user == @user || @user.admin
+      @user.destroy
+      redirect_to users_path
+    else
+      redirect_to users_path
+    end
   end
 
 private
   def user_params
-    params.require(:user).permit(:name, :username, :password, :password_confirmation, :date_of_birth, :gender, :phone, :email)
+    params.require(:user).permit(:name, :username, :password, :password_confirmation, :date_of_birth, :gender, :phone, :email, :image)
   end
 
   def set_user

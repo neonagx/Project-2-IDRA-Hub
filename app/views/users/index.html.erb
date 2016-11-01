@@ -8,7 +8,7 @@
   <% end %>
     <%= current_user.name if current_user %>
 </h1>
-
+  <%= image_tag current_user.image.url(:large) %>
   <div>
     <%= link_to 'Edit Your Profile', edit_user_path(current_user) %>
   </div>

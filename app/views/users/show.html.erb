@@ -1,5 +1,7 @@
 <%= render 'header' %>
 
+<%= image_tag @user.image.url(:large) %>
+
 <ul>
 
   <li>Username is: <%= @user.username %></li>
