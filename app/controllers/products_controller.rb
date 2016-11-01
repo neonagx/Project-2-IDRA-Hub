@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
   end
 
   def new
@@ -12,6 +13,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    redirect_to products_path unless current_user == @product.user
   end
 
   def create
@@ -26,8 +28,12 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
-    redirect_to products_path
+    if current_user == @product.user
+      @product.destroy
+      redirect_to products_path
+    else
+      redirect_to products_path
+    end
   end
 
   def update
