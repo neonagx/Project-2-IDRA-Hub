@@ -1,25 +1,25 @@
 <div class='jumbotron'>
-  <h1 class='primary'>IDRA Hub</h1>
+  <h1><img src="http://i.imgur.com/Q8dXQFt.png" class="img-fluid" alt="Responsive image"/> HUB</h1>
     <p>
     Welcome to IDRA Hub!  A place where Droners can post to either sell or buy any drones as well as any drone parts.  It is also a place where IDRA posts it's own ranking system.
     </p>
 
-  <div>
-    <%= link_to 'Sign up as a New Droner', new_user_path %>
-  </div>
+    <div>
+      <%= link_to 'Sign up as a New Droner', new_user_path %>
+    </div>
 
-  <%= form_for :login, url: "/login" do |f| %>
-    <div>
-      <%= f.label :username %>
-      <%= f.text_field :username %>
-    </div>
-    <div>
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-    </div>
-    <div>
-      <%= f.submit 'Login' %>
-    </div>
-  <% end %>
+      <%= form_for :login, url: "/login" do |f| %>
+        <div>
+          <%= f.label :username %><br>
+          <%= f.text_field :username %>
+        </div>
+        <div>
+          <%= f.label :password %><br>
+          <%= f.password_field :password %>
+        </div>
+        <button type="button" class="btn btn-primary">
+          <%= f.submit 'Login' %>
+        </button>
+      <% end %>
 
 </div>
