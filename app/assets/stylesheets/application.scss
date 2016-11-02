@@ -20,3 +20,12 @@
 nav {
   background-color: rgb(51, 153, 255);
 }
+
+.navbar-brand {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-brand img {
+  max-height: 100%;
+}
