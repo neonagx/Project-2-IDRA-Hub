@@ -3,5 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 nav {
   background-color: rgb(51, 153, 255);
-  color: white;
+  font-color: white;
+}
+
+table, tbody, th, tr, td {
+  text-align: center;
+  margin: auto;
 }

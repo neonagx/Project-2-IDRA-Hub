@@ -1,6 +1,47 @@
 <%= render "header" %>
+<div class="table-responsive">
+  <% @products.each do |product| %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Product Image</th>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Your Product?</th>
+          <th>Buying or Selling?</th>
+          <th>Date Created</th>
+          <th>Date Updated</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= image_tag product.image.url(:small) %></td>
+          <td><%= product.name %></td>
+          <td>$<%= product.price %></td>
+          <td>
+            <% if product.user == current_user %>
+            Yes
+            <% else %>
+            No Posted by: <%= product.user.name %><br>
+            <%= link_to "Go to Droner's Profile", user_path(product.user) %>
+            <% end %>
+          </td>
+          <td><%= product.for_sale %></td>
+          <td><%= product.created_at %></td>
+          <td><%= product.updated_at %></td>
+          <td><%= link_to "Details", product %></td>
+          <% if product.user == current_user || current_user.admin == true %>
+            <td><%= link_to "Delete", product, method: :delete, data: {confirm: 'Are you sure?'}  %></td>
+            <td><%= link_to "Edit", edit_product_path(product)%></td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table><br>
+  <% end %>
+</div>
 
-<ul>
+
+<!-- <ul>
   <% @products.each do |product| %>
   <%= image_tag product.image.url(:small) %>
   <li>Product Name: <%= product.name %></li>
@@ -21,4 +62,4 @@
       <%= link_to "Edit", edit_product_path(product)%>
     <% end %>
   <% end %>
-</ul>
+</ul> -->
