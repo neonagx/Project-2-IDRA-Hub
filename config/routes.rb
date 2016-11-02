@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :products do
     resources :comments
+    resources :images
   end
 
   # get 'products/' => 'products#index'

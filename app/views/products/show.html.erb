@@ -1,6 +1,9 @@
 <h1><%= @product.name.capitalize %></h1>
 <div>
-  <%= image_tag @product.image.url(:large) %>
+
+  <% @product.images.each do |image| %>
+  <%= image_tag image.image.url(:large) %>
+    <% end %>
 </div>
 <div>
   Price: $<%= @product.price %>

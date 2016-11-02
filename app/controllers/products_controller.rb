@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @product.images.build
   end
 
   def edit
@@ -19,10 +20,10 @@ class ProductsController < ApplicationController
   def create
     @user = User.find(session[:user_id])
     @product = @user.products.new(product_params)
-
     if @product.save
       redirect_to @product
     else
+      @product.images.build
       render :new
     end
   end
@@ -48,7 +49,7 @@ class ProductsController < ApplicationController
 
 private
   def product_params
-    params.require(:product).permit(:name, :price, :description, :for_sale, :image)
+    params.require(:product).permit(:name, :price, :description, :for_sale, images_attributes: [:id, :image, :_destroy])
   end
 
   def set_product
