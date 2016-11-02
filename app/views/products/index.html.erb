@@ -15,7 +15,9 @@
       </thead>
       <tbody>
         <tr>
-          <td><%= image_tag product.image.url(:small) %></td>
+          <td>
+              <%= image_tag product.images.first.image.url(:small) if product.images.length > 0 %>
+          </td>
           <td><%= product.name %></td>
           <td>$<%= product.price %></td>
           <td>
@@ -39,27 +41,3 @@
     </table><br>
   <% end %>
 </div>
-
-
-<!-- <ul>
-  <% @products.each do |product| %>
-  <%= image_tag product.image.url(:small) %>
-  <li>Product Name: <%= product.name %></li>
-  <li>Price: $<%= product.price %></li>
-  <li>
-    <% if product.user == current_user %>
-      This is Your Product
-    <% else %>
-      Posted by: <%= product.user.name %> <%= link_to "Go to Droner's Profile", user_path(product.user) %>
-    <% end %>
-  </li>
-  <li>Buying or Selling? <%= product.for_sale %></li>
-  <li>Date Created: <%= product.created_at %></li>
-  <li>Date Updated: <%= product.updated_at %></li>
-  <li><%= link_to "Details", product %></li><br>
-    <% if product.user == current_user || current_user.admin == true %>
-      <%= link_to "Delete", product, method: :delete, data: {confirm: 'Are you sure?'}  %><br>
-      <%= link_to "Edit", edit_product_path(product)%>
-    <% end %>
-  <% end %>
-</ul> -->
