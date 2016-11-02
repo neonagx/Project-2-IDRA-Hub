@@ -21,6 +21,10 @@
           <%= f.password_field :password %>
         </div><br>
           <%= f.submit 'Login', class: 'btn btn-primary' %>
+          <%# if current_user.password %>
+          <div class="alert alert-success">Successfully Logged In</div>
+          <%# else %>
+          <div class="alert alert-danger">Wrong Password</div>
+          <%# end %>
       <% end %>
-
 </div>
