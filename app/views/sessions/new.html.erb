@@ -1,25 +1,26 @@
-<div class='jumbotron'>
-  <div id="imgt"><img src="http://i.imgur.com/Q8dXQFt.png" class="img-fluid" alt="Responsive image"/> HUB</div>
+<div class='jumbotron' style="background-color: rgb(51, 153, 255)">
+  <h1><img src="http://i.imgur.com/Q8dXQFt.png" class="img-fluid" alt="Responsive image"/> HUB</h1>
+
     <p>
-    Welcome to IDRA Hub!  A place where Droners can post to either sell or buy any drones as well as any drone parts.  It is also a place where IDRA posts it's own ranking system.
+      Welcome to IDRA Hub!  A place where Droners can post to either sell or buy any drones as well as any drone parts.  It is also a place where IDRA posts it's own ranking system.
     </p>
 
     <div>
-      <%= link_to 'Sign up as a New Droner', new_user_path %>
+      <%= link_to 'SIGN UP AS NEW DRONER', new_user_path, class: 'btn btn-primary' %>
     </div>
 
       <%= form_for :login, url: "/login" do |f| %>
+
         <div>
           <%= f.label :username %><br>
           <%= f.text_field :username %>
         </div>
+
         <div>
           <%= f.label :password %><br>
           <%= f.password_field :password %>
-        </div>
-        <a class="btn btn-primary" role="button">
-          <%= f.submit 'Login' %>
-        </a>
+        </div><br>
+          <%= f.submit 'Login', class: 'btn btn-primary' %>
       <% end %>
 
 </div>
