@@ -16,7 +16,7 @@
     <div class="thumbnail-responsive">
       <%= image_tag current_user.image.url(:large), class: "media-responsive" %>
       <div class="caption">
-        <h2>Thumbnail label</h2>
+        <h2>IDRA HUB Member since: <%= current_user.created_at %></h2>
           <h3>Your username is: <%= current_user.username %></h3>
           <h3>Gender:
             <% if current_user.gender %>
@@ -29,9 +29,9 @@
           <h3>Email: <%= current_user.email %></h3>
           <h3>Phone Number: <%= current_user.phone %></h3>
         <p>
+          <%= link_to 'Post A Product!', new_product_path, class: "btn btn-info" %>
           <%= link_to 'Edit Your Profile', edit_user_path(current_user), class: "btn btn-warning" %>
           <%= link_to 'Log Out', logout_path, method: :delete, class: "btn btn-danger" %>
-          <%= link_to 'Post A Product!', new_product_path, class: "btn btn-info" %>
         </p>
       </div>
     </div>

@@ -1,11 +1,14 @@
 <%= render 'header' %>
 
-<%= image_tag @user.image.url(:large) %>
-
-<ul>
-
-  <li>Username is: <%= @user.username %></li>
-  <li>Email: <%= @user.email %></li>
-  <li>Phone Number: <%= @user.phone %></li>
-
-</ul>
+<div class="row">
+  <div class="col-lg-5 col-lg-4">
+    <div class="thumbnail-responsive">
+      <%= image_tag @user.image.url(:large) %>
+      <div class="caption">
+          <h3>Username is: <%= @user.username %></h3>
+          <h3>Email: <%= @user.email %></h3>
+          <h3>Phone Number: <%= @user.phone %></h3>
+      </div>
+    </div>
+  </div>
+</div>
