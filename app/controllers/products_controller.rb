@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    if current_user == @product.user || @prduct.user.admin
+    if current_user == @product.user || current_user.admin
       @product.destroy
       redirect_to products_path
     else
