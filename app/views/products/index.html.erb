@@ -7,13 +7,13 @@
     <table class="table table-striped-responsive">
       <thead>
         <tr>
-          <th>Product Image</th>
-          <th>Product Name</th>
-          <th>Price</th>
-          <th>Your Product?</th>
-          <th>Buying or Selling?</th>
-          <th>Date Created</th>
-          <th>Date Updated</th>
+          <th style='text-align: center'>Product Image</th>
+          <th style='text-align: center'>Product Name</th>
+          <th style='text-align: center'>Price</th>
+          <th style='text-align: center'>Your Product?</th>
+          <th style='text-align: center'>Buying or Selling?</th>
+          <th style='text-align: center'>Date Created</th>
+          <th style='text-align: center'>Date Updated</th>
         </tr>
       </thead>
       <tbody>
@@ -27,7 +27,8 @@
             <% if product.user == current_user %>
             Yes
             <% else %>
-            No Posted by: <%= product.user.name %><br>
+            No Posted by: <br>
+            <%= product.user.name %><br>
             <%= link_to "Go to Droner's Profile", user_path(product.user), class: 'btn btn-info'%>
             <% end %>
           </td>

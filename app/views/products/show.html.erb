@@ -1,39 +1,68 @@
+<%= render 'header' %>
+
 <h1><%= @product.name.capitalize %></h1>
 
 <div>
   <% @product.images.each do |image| %>
   <%= image_tag image.image.url(:large) %>
-    <% end %>
+  <% end %>
+</div><br>
+
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th style='text-align: center'>Price</th>
+        <th style='text-align: center'>Buying or Selling?</th>
+        <th style='text-align: center'>Posted By</th>
+        <th style='text-align: center'>Created at</th>
+        <th style='text-align: center'>Updated On</th>
+        <th style='text-align: center'>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>$<%= @product.price %></td>
+        <td><%= @product.for_sale %></td>
+        <td><%= @product.user.name %></td>
+        <td><%= @product.created_at %></td>
+        <td><%= @product.updated_at %></td>
+        <td><%= @product.description %></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-<div>
-  Price: $<%= @product.price %>
-</div>
-<div>
-  Buying or Selling? <%= @product.for_sale %>
-</div>
-<div>
-  Posted By: <%= @product.user.name %>
-</div>
-<div>
-  Posted By: <%= @product.created_at%>
-</div>
-<div>
-  Posted By: <%= @product.updated_at %>
-</div>
-<p><%= @product.description %></p>
 
 <% if @product.user == current_user || current_user.admin == true %>
   <%= link_to "Delete", @product, method: :delete, data: {confirm: 'Are you sure?'}  %><br>
   <%= link_to "Edit", edit_product_path(@product)%>
 <% end %>
 
-<%= form_for([@product, @comment]) do |c| %>
-  <div>
-    <%= c.label :message %><br>
-    <%= c.text_field :content %>
+
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">WRITE A COMMENT</button>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <%= form_for([@product, @comment]) do |c| %>
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><%= c.label :message %></h4>
+      </div>
+      <div class="modal-body">
+        <p><%= c.text_field :content, :size => '78x2000', :maxheight => '100'%></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= c.submit 'Submit Comment', class: 'btn btn-primary'%>
+      </div>
+    </div>
+    <% end %>
   </div>
-    <%= c.submit 'Submit Comment'%>
-<% end %>
+</div>
+
+
 
 <% @product.comments.each do |comment| %>
   <%= comment.content %>
