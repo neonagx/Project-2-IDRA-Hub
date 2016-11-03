@@ -1,27 +1,32 @@
 <%= form_for @product do |f| %>
 
   <div>
-    <%= f.label :name %>
+    <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
   <div>
-    <%= f.label :price %>
+    <%= f.label :price %><br>
     <%= f.number_field :price, :step => 0.001 %>
   </div>
+
   <div>
-    <%= f.label :description %>
+    <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
+
   <div>
-    <%= f.label :for_sale %>
+    <%= f.label :for_sale %><br>
     <%= f.select :for_sale, options_for_select([["Select One", ""], "Selling", "Buying"])%>
   </div>
+
   <div>
     <%= f.fields_for :images do |ff| %>
       <%= ff.label :image %>
       <%= ff.file_field :image %>
     <% end %>
   </div>
+  
   <div>
     <%= f.submit "Create", class: 'btn btn-primary' %>
   </div>

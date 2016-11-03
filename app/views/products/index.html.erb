@@ -1,4 +1,7 @@
 <%= render "header" %>
+
+<h2> <%= link_to "POST A PRODUCT", new_product_path, class: 'btn btn-info'%> </h2>
+
 <div class="table-responsive">
   <% @products.each do |product| %>
     <table class="table table-striped-responsive">
@@ -25,16 +28,16 @@
             Yes
             <% else %>
             No Posted by: <%= product.user.name %><br>
-            <%= link_to "Go to Droner's Profile", user_path(product.user) %>
+            <%= link_to "Go to Droner's Profile", user_path(product.user), class: 'btn btn-info'%>
             <% end %>
           </td>
           <td><%= product.for_sale %></td>
           <td><%= product.created_at %></td>
           <td><%= product.updated_at %></td>
-          <td><%= link_to "Details", product %></td>
+          <td><%= link_to "Details", product, class: 'btn btn-info'%></td>
           <% if product.user == current_user || current_user.admin == true %>
-            <td><%= link_to "Delete", product, method: :delete, data: {confirm: 'Are you sure?'}  %></td>
-            <td><%= link_to "Edit", edit_product_path(product)%></td>
+            <td><%= link_to "Edit", edit_product_path(product), class: 'btn btn-warning'%></td>
+            <td><%= link_to "Delete", product, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger'  %></td>
           <% end %>
         </tr>
       </tbody>
