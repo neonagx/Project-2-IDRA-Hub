@@ -4,7 +4,10 @@
 
 <div>
   <% @product.images.each do |image| %>
-  <%= image_tag image.image.url(:large) %>
+    <%= image_tag image.image.url(:large) %><br>
+    <% if @product.user == current_user || current_user.admin %>
+      <%= link_to "Delete Image", product_image_path(@product, image), method: :delete, data:{confirm: "Delete Image?"}, class: "btn btn-danger" %><br>
+    <% end %>
   <% end %>
 </div><br>
 
@@ -63,8 +66,6 @@
   </div>
 </div>
 
-
-
 <% @product.comments.each do |comment| %>
 <div class="media" style="background-color: white">
   <div class="media-left">
@@ -75,7 +76,7 @@
     <p><%= comment.content %></p>
   </div><br>
 </div>
-  <% if comment.user || comment.user.admin %>
+  <% if comment.user == current_user || current_user.admin %>
     <%= link_to "Delete Comment", product_comment_path(@product, comment), method: :delete, data:{confirm: "Are You Sure?"}, class: "btn btn-danger" %>
   <% end %>
 <% end %>
