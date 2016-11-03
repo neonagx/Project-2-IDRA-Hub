@@ -34,3 +34,14 @@ body {
   background-image: url('http://i.imgur.com/T7EWo1k.jpg');
   background-size: cover;
 }
+
+.container {
+  width: 960px;
+  position: relative;
+  margin:0 auto;
+  line-height: 1.4em;
+}
+
+@media only screen and (max-width: 479px){
+    .container { width: 90%; }
+}
