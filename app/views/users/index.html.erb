@@ -1,36 +1,39 @@
 <%= render 'header' %>
 
-<h1>Welcome
-  <% if current_user.admin == true %>
+<div class="alert alert-info" role="alert">
+  <h1>Welcome
+    <% if current_user.admin == true %>
     Admin
-  <% else %>
+    <% else %>
     Droner
-  <% end %>
+    <% end %>
     <%= current_user.name if current_user %>
-</h1>
-  <%= image_tag current_user.image.url(:large) %>
-  <div>
-    <%= link_to 'Edit Your Profile', edit_user_path(current_user) %>
-  </div>
-  <div>
-    <%= link_to 'Log Out', logout_path, method: :delete %>
-  </div>
-  <div>
-    <%= link_to 'Post A Product!', new_product_path %>
-  </div>
+  </h1>
+</div>
 
-    <ul>
-
-      <li>Your username is: <%= current_user.username %></li>
-      <li>Gender:
-        <% if current_user.gender %>
-          Male
-        <% else %>
-          Female
-        <% end %>
-      </li>
-      <li>Date of Birth: <%= current_user.date_of_birth %></li>
-      <li>Email: <%= current_user.email %></li>
-      <li>Phone Number: <%= current_user.phone %></li>
-
-    </ul>
+<div class="row">
+  <div class="col-lg-5 col-lg-4">
+    <div class="thumbnail-responsive">
+      <%= image_tag current_user.image.url(:large), class: "media-responsive" %>
+      <div class="caption">
+        <h2>Thumbnail label</h2>
+          <h3>Your username is: <%= current_user.username %></h3>
+          <h3>Gender:
+            <% if current_user.gender %>
+              Male
+            <% else %>
+              Female
+            <% end %>
+          </h3>
+          <h3>Date of Birth: <%= current_user.date_of_birth %></h3>
+          <h3>Email: <%= current_user.email %></h3>
+          <h3>Phone Number: <%= current_user.phone %></h3>
+        <p>
+          <%= link_to 'Edit Your Profile', edit_user_path(current_user), class: "btn btn-warning" %>
+          <%= link_to 'Log Out', logout_path, method: :delete, class: "btn btn-danger" %>
+          <%= link_to 'Post A Product!', new_product_path, class: "btn btn-info" %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
