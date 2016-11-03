@@ -14,6 +14,11 @@
           <th style='text-align: center'>Buying or Selling?</th>
           <th style='text-align: center'>Date Created</th>
           <th style='text-align: center'>Date Updated</th>
+          <th style='text-align: center'><img src="http://i.imgur.com/Quj3YTU.png" alt="Brand" class="img-circle"></th>
+          <% if product.user == current_user || current_user.admin %>
+            <th style='text-align: center'><img src="http://i.imgur.com/Quj3YTU.png" alt="Brand" class="img-circle"></th>
+            <th style='text-align: center'><img src="http://i.imgur.com/Quj3YTU.png" alt="Brand" class="img-circle"></th>
+          <% end %>
         </tr>
       </thead>
       <tbody>

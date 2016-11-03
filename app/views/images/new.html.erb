@@ -1,0 +1,28 @@
+<nav class="navbar navbar-primary" role="navigation">
+ <div class="container-fluid">
+   <div class="navbar-header">
+     <div class="navbar-brand-left-responsive">
+      <img src="http://i.imgur.com/Quj3YTU.png" alt="Brand" class="img-circle">
+      <span>IDRA</span>
+     </div>
+   </div>
+   <div class="collapse navbar-collapse">
+     <ul class="nav navbar-nav navbar-right">
+       <li> <%= link_to 'Main Hub', products_path, style: "color: white" %></li>
+       <li> <%= link_to 'Log Out', logout_path, method: :delete, style: "color: white"%> </li>
+       <li> <%= link_to "Profile", users_path, style: "color: white"%> </li>
+       <li> <%= link_to "Contact", users_path, style: "color: white"%> </li>
+     </ul>
+   </div>
+ </div>
+</nav>
+
+<%= form_for [@product, @image] do |f| %>
+<div style="width:25%">
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+</div><br>
+<div>
+  <%= f.submit %>
+</div>
+<% end %>
