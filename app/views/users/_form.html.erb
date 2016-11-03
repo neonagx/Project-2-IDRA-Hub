@@ -37,15 +37,15 @@
   <div>
     <%= f.label :date_of_birth %><br>
     <%= f.date_field :date_of_birth %>
-  </div>
+  </div><br>
 
   <div style="width:25%">
     <%= f.label :profile_image %>
-    <%= f.file_field :image, class: 'btn btn-info' %>
-  </div>
+    <%= f.file_field :image %>
+  </div><br>
 
   <div>
     <%= f.submit %>
   </div>
-  
+
 <% end %>

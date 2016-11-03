@@ -30,9 +30,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    if current_user == @user || @user.admin
+    if current_user == @user || current_user.admin
       @user.destroy
-      redirect_to users_path
+      redirect_to root_path
     else
       redirect_to users_path
     end
