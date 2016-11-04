@@ -1,7 +1,7 @@
 <%= render 'header' %>
 
 <%= render 'menu' %>
-<div class="container">
+
 <div class="row">
   <div class="col-lg-5 col-lg-4">
     <div class="thumbnail-responsive">
@@ -14,5 +14,5 @@
     </div>
   </div>
 </div>
-</div>
+
 <%= link_to 'Delete Your Account', user_path(@user), method: :delete, class: "btn btn-danger", data: {confirm: "Are you Sure?"} if current_user.admin %>
