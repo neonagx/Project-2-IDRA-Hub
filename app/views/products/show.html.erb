@@ -2,14 +2,15 @@
 
 <h1><%= @product.name.capitalize %></h1>
 
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Links On Phone
+</button>
+
 <div class="container">
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Links On Phone
-  </button>
   <div class="collapse" id="collapseExample">
     <div class="well">
        <%= link_to "Main Hub", products_path, style: "color: blue"%><br>
-       <%= link_to "Contact", products_path, style: "color:  blue" %><br>
+       <%= link_to "Profile", users_path, style: "color: white"%><br>
        <%= link_to "Ranking System", products_path, style: "color: blue"%><br>
        <%= link_to "About IDRA Team", products_path, style: "color: blue"%><br>
     </div>
