@@ -1,20 +1,7 @@
 <%= render 'header' %>
 
-<div class="container">
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Links On Phone
-  </button>
-  <div class="collapse" id="collapseExample">
-    <div class="well">
-       <%= link_to "Main Hub", products_path, style: "color: blue"%><br>
-       <%= link_to "Contact", products_path, style: "color:  blue" %><br>
-       <%= link_to "Ranking System", products_path, style: "color: blue"%><br>
-       <%= link_to "About IDRA Team", products_path, style: "color: blue"%><br>
-    </div>
-  </div>
-</div>
+<%= render 'menu' %>
 
-<div class="container">
   <div id="accordion" role="tablist" aria-multiselectable="true">
     <div class="card">
       <div class="card-header" role="tab" id="headingOne">
@@ -39,10 +26,9 @@
       </div>
     </div>
   </div>
-</div>
+
 
 <div class="container">
-  <div class="container">
     <div class="thumbnail-responsive">
       <%= image_tag current_user.image.url(:large), class: "media-responsive" %>
       <div class="caption">
@@ -67,5 +53,4 @@
         </p>
       </div>
     </div>
-  </div>
 </div>
