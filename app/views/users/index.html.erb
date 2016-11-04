@@ -1,14 +1,44 @@
 <%= render 'header' %>
 
-<div class="alert alert-info" role="alert">
-  <h1>Welcome
-    <% if current_user.admin == true %>
-      ADMIN
-    <% else %>
-      DRONER
-    <% end %>
-    <%= current_user.name if current_user %>
-  </h1>
+<div class="container">
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Links On Phone
+  </button>
+  <div class="collapse" id="collapseExample">
+    <div class="well">
+       <%= link_to "Main Hub", products_path, style: "color: blue"%><br>
+       <%= link_to "Contact", products_path, style: "color:  blue" %><br>
+       <%= link_to "Ranking System", products_path, style: "color: blue"%><br>
+       <%= link_to "About IDRA Team", products_path, style: "color: blue"%><br>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="card">
+      <div class="card-header" role="tab" id="headingOne">
+        <h5 class="mb-0">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="btn btn-info">
+            Close Message
+          </a>
+        </h5>
+      </div>
+
+      <div id="collapseOne" class="collapse in" role="tabpanel" aria-labelledby="headingOne">
+        <div class="card-block">
+          <h1>Welcome
+            <% if current_user.admin == true %>
+              ADMIN
+            <% else %>
+              DRONER
+            <% end %>
+            <%= current_user.name if current_user %>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="container">
@@ -26,7 +56,8 @@
             <% end %>
           </h3>
           <h3>Date of Birth: <%= current_user.date_of_birth %></h3>
-          <h3>Email: <%= current_user.email %></h3>
+          <h3>Email:</h3>
+          <h3><%= current_user.email %></h3>
           <h3>Phone Number: <%= current_user.phone %></h3>
         <p>
           <%= link_to 'Post A Product!', new_product_path, class: "btn btn-info" %>

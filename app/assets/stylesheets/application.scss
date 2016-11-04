@@ -21,9 +21,25 @@ nav {
   background-color: rgb(51, 153, 255);
 }
 
+.media-responsive {
+  max-width: 100%;
+}
+
+.table-responsive {
+  max-width: 100%;
+}
+
+.card-block {
+  background-color: white;
+}
+
 .navbar-brand {
   margin: 0;
   padding: 0;
+}
+
+.navbar-collapse {
+  max-width: 100%;
 }
 
 .navbar-brand img {
